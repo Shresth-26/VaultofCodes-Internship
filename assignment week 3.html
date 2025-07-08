@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<head>
+<title>User Registration Form</title>
+<style>
+     body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #a8e6cf, #dcedc1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+     }
+    .form-container {
+      background-color: #f5e0c3; /* skin color */
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 350px;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #333;
+      font-weight: bold;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .form-group input[type="checkbox"] {
+      width: auto;
+      margin-right: 0.5rem;
+    }
+    .form-group .gender {
+      display: flex;
+      gap: 1rem;
+      color: #333;
+    }
+    button {
+      width: 100%;
+      padding: 0.7rem;
+      background-color: #8bc34a;
+      border: 3;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #689f38;
+    }
+  </style>
+</head>
+<body>
+<div class="form-container">
+<h2>Vault-Of-Code Registration</h2>
+<form id="registrationForm" onsubmit="return validateForm()">
+<div class="form-group">
+<label for="fullName">Full Name</label>
+<input type="text" id="fullName" name="fullName" required />
+</div>
+<div class="form-group">
+<label for="email">Email</label>
+<input type="email" id="email" name="email" required />
+</div>
+<div class="form-group">
+<label for="password">Password</label>
+<input type="password" id="password" name="password" required />
+</div>
+<div class="form-group">
+<label for="confirmPassword">Confirm Password</label>
+<input type="password" id="confirmPassword" name="confirmPassword" required />
+</div>
+<div class="form-group">
+<label for="dob">Date of Birth</label>
+<input type="date" id="dob" name="dob" required />
+</div>
+<div class="form-group">
+<label>Gender</label>
+<div class="gender">
+<label><input type="radio" name="gender" value="Male" required> Male</label>
+<label><input type="radio" name="gender" value="Female" required> Female</label>
+<label><input type="radio" name="gender" value="Other" required> Other</label>
+</div></div><div class="form-group"><label>
+<input type="checkbox" id="terms" required> I agree to the Terms and Conditions</label>
+</div>
+<button type="submit">Register</button>
+</form>
+</div>
+<script>
+function validateForm() {
+const password = document.getElementById('password').value;
+const confirmPassword = document.getElementById('confirmPassword').value;
+if (password !== confirmPassword) {
+alert('Passwords do not match!');
+return false;}
+alert('Registration Successful!');
+return true;}
+</script>
+</body>
+</html>
