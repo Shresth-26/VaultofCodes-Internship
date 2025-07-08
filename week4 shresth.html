@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Movie Booking System</title>
+<style>
+body {
+    background-color: #0d47a1;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    background-color: #fff;
+    color: #000;
+    padding: 30px;
+    width: 320px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    text-align: center;
+}
+h2 {
+    color: #0d47a1;
+    margin-bottom: 20px;
+}
+input, select, button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #388e3c;
+}
+.confirmation {
+    margin-top: 15px;
+    color: green;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h2>Book Movie or Show</h2>
+<form id="form">
+<input type="text" id="name" placeholder="Your Name">
+<input type="email" id="email" placeholder="Email">
+<input type="date" id="date">
+<select id="movie">
+<option value="">Choose Movie/Show</option>
+<option>INFINITY-WAR</option>
+<option>AQUAMAN</option>
+<option>SPIDER-MAN</option>
+<option>BLACK-PANTHER</option>
+</select>
+<button type="submit">Book Now</button>
+</form>
+<div class="confirmation" id="msg"></div>
+</div>
+<script>
+document.getElementById("form").onsubmit = function(e) {
+    e.preventDefault();
+    var name = document.getElementById("name").value;
+    var movie = document.getElementById("movie").value;
+    var date = document.getElementById("date").value;
+    document.getElementById("msg").innerText = "Thanks " + name + ", your booking for " + movie + " on " + date + " is confirmed.";
+};
+</script>
+</body>
+</html>
